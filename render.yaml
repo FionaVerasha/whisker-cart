@@ -10,6 +10,10 @@ services:
         value: false
       - key: LOG_CHANNEL
         value: errorlog
+      - key: LOG_LEVEL
+        value: info
+      
+      # Database Configuration
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST
@@ -32,6 +36,14 @@ services:
         fromDatabase:
           name: whisker-db
           property: password
+
+      # Production Optimizations
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_DRIVER
+        value: database
+      - key: FILESYSTEM_DISK
+        value: public
 
 databases:
   - name: whisker-db

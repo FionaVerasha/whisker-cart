@@ -1,7 +1,7 @@
 services:
   - type: web
     name: whisker-cart
-    env: php
+    env: heroku
     plan: free
     buildCommand: ./render-build.sh
     startCommand: heroku-php-apache2 public/

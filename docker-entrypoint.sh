@@ -10,6 +10,10 @@ php artisan storage:link --force
 echo "Running migrations..."
 php artisan migrate --force
 
+# Seed products
+echo "Seeding products..."
+php artisan db:seed --force
+
 # Caching for production
 echo "Optimizing Laravel for production..."
 php artisan config:cache

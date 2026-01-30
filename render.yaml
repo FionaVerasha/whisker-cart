@@ -13,9 +13,7 @@ services:
       - key: LOG_CHANNEL
         value: errorlog
       - key: DB_CONNECTION
-        fromDatabase:
-          name: whisker-db
-          property: connection
+        value: pgsql
       - key: DB_HOST
         fromDatabase:
           name: whisker-db

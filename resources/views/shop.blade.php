@@ -19,54 +19,54 @@
                 $detailUrl = route('product.show', ['id' => $id]);
 
                 echo '
-                                                                                                                                                    <div class="group bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
-                                                                                                                                                    <div class="relative h-64 md:h-72 ' . $imgBg . ' flex items-center justify-center p-8 overflow-hidden rounded-t-3xl border-b border-gray-50/50">
-                                                                                                                                                        <a href="' . $detailUrl . '" class="absolute inset-0 z-20"></a>';
+                                                                                                                                                        <div class="group bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
+                                                                                                                                                        <div class="relative h-64 md:h-72 ' . $imgBg . ' flex items-center justify-center p-8 overflow-hidden rounded-t-3xl border-b border-gray-50/50">
+                                                                                                                                                            <a href="' . $detailUrl . '" class="absolute inset-0 z-20"></a>';
 
                 if ($image) {
                     echo '<img src="' . $image . '" alt="' . $name . '" class="max-w-full max-h-full w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-700 relative z-10 antialiased drop-shadow-sm">';
                 } else {
                     echo '<div class="relative z-10 flex flex-col items-center justify-center text-slate-200">
-                                                                                                                                                        <svg class="w-20 h-20 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-                                                                                                                                                      </div>';
+                                                                                                                                                            <svg class="w-20 h-20 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                                                                                                                                          </div>';
                 }
 
                 if ($badge) {
                     echo '<div class="absolute inset-0 flex items-center justify-center p-6 pointer-events-none">
-                                                                                                                                                            <span class="bg-white/90 backdrop-blur-md text-gray-950 text-xs font-black px-5 py-2.5 rounded-xl uppercase tracking-widest shadow-sm border border-white/50">' . $badge . '</span>
-                                                                                                                                                          </div>';
+                                                                                                                                                                <span class="bg-white/90 backdrop-blur-md text-gray-950 text-xs font-black px-5 py-2.5 rounded-xl uppercase tracking-widest shadow-sm border border-white/50">' . $badge . '</span>
+                                                                                                                                                              </div>';
                 }
 
                 echo '
+                                                                                                                                                            </div>
+                                                                                                                                                            <div class="p-6 flex flex-col flex-grow bg-green-50 rounded-b-3xl transition-all duration-500 group-hover:bg-green-100/50">
+                                                                                                                                                        <div class="flex-grow">
+                                                                                                                                                            <div class="flex items-center justify-between mb-2">
+                                                                                                                                                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand transition-colors uppercase tracking-tight truncate flex-grow">' . $name . '</h3>
+                                                                                                                                                </div>
+                                                                                                                                                            <p class="mt-2 text-sm text-slate-500 leading-relaxed line-clamp-2 h-10">' . $description . '</p>
                                                                                                                                                         </div>
-                                                                                                                                                        <div class="p-6 flex flex-col flex-grow bg-green-50 rounded-b-3xl transition-all duration-500 group-hover:bg-green-100/50">
-                                                                                                                                                    <div class="flex-grow">
-                                                                                                                                                        <div class="flex items-center justify-between mb-2">
-                                                                                                                                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand transition-colors uppercase tracking-tight truncate flex-grow">' . $name . '</h3>
-                                                                                                                                            </div>
-                                                                                                                                                        <p class="mt-2 text-sm text-slate-500 leading-relaxed line-clamp-2 h-10">' . $description . '</p>
-                                                                                                                                                    </div>
 
-                                                                                                                                                            <div class="mt-auto pt-6 flex items-center justify-between gap-4">
-                                                                                                                                                                <form action="' . $cartUrl . '" method="POST" class="m-0 flex-grow">
-                                                                                                                                                                    <input type="hidden" name="_token" value="' . $csrf . '">
-                                                                                                                                                                    <input type="hidden" name="product_id" value="' . $id . '">
-                                                                                                                                                                    <input type="hidden" name="name" value="' . $name . '">
-                                                                                                                                                                    <input type="hidden" name="price" value="' . $price . '">
-                                                                                                                                                                    <input type="hidden" name="image" value="' . $image . '">
-                                                                                                                                                                    <button type="submit" class="w-full bg-brand hover:bg-brand-dark text-white font-black py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-brand/20 flex items-center justify-center gap-2 active:scale-[0.98] text-xs uppercase tracking-widest group/btn no-underline whitespace-nowrap cursor-pointer">
-                                                                                                                                                                        <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                                                                                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                                                                                                                                                        </svg>
-                                                                                                                                                                        <span>Add to Cart</span>
-                                                                                                                                                                    </button>
-                                                                                                                                                                </form>
-                                                                                                                                                                <div class="text-xl font-black text-brand text-right whitespace-nowrap">
-                                                                                                                                                                    <span class="text-[10px] font-bold text-gray-400 mr-0.5">LKR</span>' . number_format($price) . '
+                                                                                                                                                                <div class="mt-auto pt-6 flex items-center justify-between gap-4">
+                                                                                                                                                                    <form action="' . $cartUrl . '" method="POST" class="m-0 flex-grow">
+                                                                                                                                                                        <input type="hidden" name="_token" value="' . $csrf . '">
+                                                                                                                                                                        <input type="hidden" name="product_id" value="' . $id . '">
+                                                                                                                                                                        <input type="hidden" name="name" value="' . $name . '">
+                                                                                                                                                                        <input type="hidden" name="price" value="' . $price . '">
+                                                                                                                                                                        <input type="hidden" name="image" value="' . $image . '">
+                                                                                                                                                                        <button type="submit" class="w-full bg-brand hover:bg-brand-dark text-white font-black py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-brand/20 flex items-center justify-center gap-2 active:scale-[0.98] text-xs uppercase tracking-widest group/btn no-underline whitespace-nowrap cursor-pointer">
+                                                                                                                                                                            <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                                                                                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                                                                                                                                                            </svg>
+                                                                                                                                                                            <span>Add to Cart</span>
+                                                                                                                                                                        </button>
+                                                                                                                                                                    </form>
+                                                                                                                                                                    <div class="text-xl font-black text-brand text-right whitespace-nowrap">
+                                                                                                                                                                        <span class="text-[10px] font-bold text-gray-400 mr-0.5">LKR</span>' . number_format($price) . '
+                                                                                                                                                                    </div>
                                                                                                                                                                 </div>
                                                                                                                                                             </div>
-                                                                                                                                                        </div>
-                                                                                                                                                    </div>';
+                                                                                                                                                        </div>';
             }
             echo '</div>';
         }
@@ -153,7 +153,7 @@
         </section>
 
         <!-- Section: Cat Food -->
-        <section id="cat-food" class="pt-12 pb-24 md:pt-16 md:pb-32">
+        <section id="cat-food" class="pt-12 pb-12 md:pt-16 md:pb-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">CAT <span
@@ -168,7 +168,7 @@
         </section>
 
         <!-- Section: Dog Food -->
-        <section id="dog-food" class="pt-24 pb-32 md:pt-32 bg-white">
+        <section id="dog-food" class="pt-12 pb-16 md:pt-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">DOG <span
@@ -183,7 +183,7 @@
         </section>
 
         <!-- Section: Pet Essentials -->
-        <section id="essentials" class="py-32">
+        <section id="essentials" class="pt-12 pb-32 md:pt-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">PET <span
